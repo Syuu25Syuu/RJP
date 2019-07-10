@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>数字タッチゲーム</title>
+  </head>
+  <body>
+    <p>Your score:<span id="score"></span></p>
+    <input type="button" id ="button_0" value="" onclick ="touched(0);" />
+    <input type="button" id ="button_1" value="" onclick ="touched(1);" />
+    <input type="button" id ="button_2" value="" onclick ="touched(2);" />
+    <br />
+    <input type="button" id ="button_3" value="" onclick ="touched(3);" />
+    <input type="button" id ="button_4" value="" onclick ="touched(4);" />
+    <input type="button" id ="button_5" value="" onclick ="touched(5);" />
+    <br />
+    <input type="button" id ="button_6" value="" onclick ="touched(6);" />
+    <input type="button" id ="button_7" value="" onclick ="touched(7);" />
+    <input type="button" id ="button_8" value="" onclick ="touched(8);" />
+
+
+  <script type="text/javascript">
+    //数字を振り分ける処理の内容。
+      function initButtons() {
+    //buttonsという配列を作る。
+        var buttons = [];
+        for (var i = 0; i <= 8; i++) {
+    //flagという関数を作る。
+          var flag = true;
+    //flagはtrueなのでwhileの中身へ。
+          while (flag) {
+    //変数aは0-8の整数。()
+            var a = Math.floor(Math.random() * 9);
+    //buttons[a]にまだ数字が振り分けてないとき実行。
+            if (buttons[a] == undefined) {
+    //iには最初に０が入る。aはランダムに選ばれた場所。
+                buttons[a] = i;
+                document.getElementById('button_'+a).value = i;
+    //flagがfalseになるのでここの処理を抜けて、forの頭に戻る。
+                flag = false;
+            }
+          }
+        }
+        runTimer();
+      }
+      initButtons();
+
+     //０から押して行かなければならないので変数をまず０と設定しておく。
+      var currentNumber = 0;
+    //点数をつけるための変数を用意。
+      var score = 0;
+    //変数を作成。
+      var timerId;
+    //タイマー機能の処理内容。
+      function runTimer() {
+    //scoreというidのところの要素をカウントした数字として現れるように置き換える。
+        document.getElementById('score').innerHTML = score++;
+        timerId = setTimeout(runTimer, 10);
+      }
+    //n番目の数字をタッチしたときの処理を書く。
+      function touched(n) {
+    //クリックしたときの数字を得る関数を作る。
+        var touchedNumber = document.getElementById('button_' +n).value;
+    //クリックした数字と今押すべき数字を判定する。
+        if (touchedNumber == currentNumber) {
+    //条件が正しかった場合、次に押すべきものは１なので１を足す処理。
+          currentNumber++;
+    //押されたボタンに書かれた数字を空にする。
+          document.getElementById('button_'+n).value = ' ';
+          if (currentNumber > 8) {
+            alert("フィニッシュ!"+ " Your score: "+score);
+            clearTimeout(timerId);
+          }
+        }
+    //押すべきものを押さなかった場合、警告表示。
+        else {
+          alert('Wrong Number');
+        }
+      }
+    </script>
+
+
+  </body>
+</html>
