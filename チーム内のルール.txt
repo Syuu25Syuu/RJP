@@ -3,6 +3,7 @@ RJP 2019/07/10
 
 使うファイル名
 トップページ:index.html
+	    :index.css
 テキストファイル
 		:pushbuttonscore.txt
 		:numberfindingscore.txt
