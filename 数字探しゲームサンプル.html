@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>数字タッチゲーム</title>
+  </head>
+  <body>
+    <p>Your score:<span id="score"></span></p>
+    <input type="button" id ="button_0" value="" onclick ="touched(0);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_1" value="" onclick ="touched(1);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_2" value="" onclick ="touched(2);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_3" value="" onclick ="touched(3);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_4" value="" onclick ="touched(4);"  style="width:36px;height:36px" />
+    <br />
+    <input type="button" id ="button_5" value="" onclick ="touched(5);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_6" value="" onclick ="touched(6);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_7" value="" onclick ="touched(7);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_8" value="" onclick ="touched(8);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_9" value="" onclick ="touched(9);"  style="width:36px;height:36px" />
+    <br />
+    <input type="button" id ="button_10" value="" onclick ="touched(10);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_11" value="" onclick ="touched(11);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_12" value="" onclick ="touched(12);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_13" value="" onclick ="touched(13);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_14" value="" onclick ="touched(14);"  style="width:36px;height:36px" />
+	<br />
+    <input type="button" id ="button_15" value="" onclick ="touched(15);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_16" value="" onclick ="touched(16);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_17" value="" onclick ="touched(17);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_18" value="" onclick ="touched(18);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_19" value="" onclick ="touched(19);"  style="width:36px;height:36px" />
+    <br />
+    <input type="button" id ="button_20" value="" onclick ="touched(20);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_21" value="" onclick ="touched(21);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_22" value="" onclick ="touched(22);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_23" value="" onclick ="touched(23);"  style="width:36px;height:36px" />
+    <input type="button" id ="button_24" value="" onclick ="touched(24);"  style="width:36px;height:36px" />
+    <br />
+    
+	
+
+  <script type="text/javascript">
+    //数字を振り分ける処理の内容。
+      function initButtons() {
+    //buttonsという配列を作る。
+        var buttons = [];
+        for (var i = 1; i <= 25; i++) {
+    //flagという関数を作る。
+          var flag = true;
+    //flagはtrueなのでwhileの中身へ。
+          while (flag) {
+    //変数aは1-25の整数。()
+            var a = Math.floor(Math.random() * 25);
+    //buttons[a]にまだ数字が振り分けてないとき実行。
+            if (buttons[a] == undefined) {
+    //iには最初に０が入る。aはランダムに選ばれた場所。
+                buttons[a] = i;
+                document.getElementById('button_'+a).value = i;
+    //flagがfalseになるのでここの処理を抜けて、forの頭に戻る。
+                flag = false;
+            }
+          }
+        }
+        runTimer();
+      }
+      initButtons();
+
+     //０から押して行かなければならないので変数をまず０と設定しておく。
+      var currentNumber = 1;
+    //点数をつけるための変数を用意。
+      var score = 0;
+    //変数を作成。
+      var timerId;
+    //タイマー機能の処理内容。
+      function runTimer() {
+    //scoreというidのところの要素をカウントした数字として現れるように置き換える。
+        document.getElementById('score').innerHTML = score++;
+        timerId = setTimeout(runTimer, 100);
+      }
+    //n番目の数字をタッチしたときの処理を書く。
+      function touched(n) {
+    //クリックしたときの数字を得る関数を作る。
+        var touchedNumber = document.getElementById('button_' +n).value;
+    //クリックした数字と今押すべき数字を判定する。
+        if (touchedNumber == currentNumber) {
+    //条件が正しかった場合、次に押すべきものは１なので１を足す処理。
+          currentNumber++;
+    //押されたボタンに書かれた数字を空にする。
+          document.getElementById('button_'+n).value = ' ';
+          if (currentNumber > 25) {
+            alert("フィニッシュ!"+ " Your score: "+score);
+            clearTimeout(timerId);
+          }
+        }
+      }
+    </script>
+
+
+  </body>
+</html>
