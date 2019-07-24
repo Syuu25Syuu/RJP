@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServlet;
 
 import scoretaker.ScoreSortTaker;
+import scoretaker.ScoreTaker;
 
 public class PushbuttongameServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
@@ -30,15 +31,43 @@ public class PushbuttongameServlet extends HttpServlet {
 		//FileWriterクローズ
         filewriter.close();
         //読み込みーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+		//ソート前のデータ(最新のデータ)の読み込み
         ArrayList data=ScoreSortTaker.getScore("C:/gakuensaiRJP/txt/pushbuttonscore.txt");
-
+		ArrayList names1=(ArrayList)data.get(0);
+		ArrayList scores1=(ArrayList)data.get(1);
+		
+		String newestname=(String)names1.get(names1.size()-1);
+		int newestscore=(int)scores1.get(scores1.size()-1);
+		
+		//ソート後のデータの読み込み
+		data=ScoreTaker.scoreTake("C:/gakuensaiRJP/txt/pushbuttonscore.txt");
+		ArrayList names2=(ArrayList)data.get(0);
+		ArrayList scores2=(ArrayList)data.get(1);
+		
+		//抽出したデータ
+		ArrayList<String> sortnames=new ArrayList<String>();
+		ArrayList<Integer> sortscores=new ArrayList<Integer>();
+		
+		for(int i=0; 3>i; i++){
+			sortnames.add((String)names2.get(i));
+		}
+		
+		for(int i=0; 3>i; i++){
+			sortscores.add((int)scores2.get(i));
+		}
+		
+		sortnames.add(newestname);
+		sortscores.add(newestscore);
+		
+		
 
 
 
 
 		//JSP転送ーーーーーーーーーーーーーーーー-ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 		//値セット
-		request.setAttribute("data",data);
+		request.setAttribute("name",sortnames);
+		request.setAttribute("score",sortscores);
 		//送る先のJSP指定
 		RequestDispatcher dispatcher=request.getRequestDispatcher("pushbuttonranking");
 		//JSPに転送
