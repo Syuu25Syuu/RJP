@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ScoreSortTaker {
-	//ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ãƒ‡ãƒ¼ã‚¿ã‚’å–ã£ã¦ãã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
+	//ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚©‚çƒf[ƒ^‚ğæ‚Á‚Ä‚­‚éƒƒ\ƒbƒh
 	public static ArrayList getScore(String path) {
-		ArrayList<ArrayList> data = new ArrayList<ArrayList>();//ã‚¹ã‚³ã‚¢ã€åå‰ã®ãƒªã‚¹ãƒˆã‚’æ ¼ç´ã™ã‚‹ãƒªã‚¹ãƒˆ
-		ArrayList<Integer> score = new ArrayList<Integer>();//åå‰ã®ãƒªã‚¹ãƒˆã‚’æ ¼ç´ã™ã‚‹ãƒªã‚¹ãƒˆ
-		ArrayList<String> name = new ArrayList<String>();//ã‚¹ã‚³ã‚¢ã®ãƒªã‚¹ãƒˆã‚’æ ¼ç´ã™ã‚‹ãƒªã‚¹ãƒˆ
+		ArrayList<ArrayList> data = new ArrayList<ArrayList>();//ƒXƒRƒAA–¼‘O‚ÌƒŠƒXƒg‚ğŠi”[‚·‚éƒŠƒXƒg
+		ArrayList<Integer> score = new ArrayList<Integer>();//–¼‘O‚ÌƒŠƒXƒg‚ğŠi”[‚·‚éƒŠƒXƒg
+		ArrayList<String> name = new ArrayList<String>();//ƒXƒRƒA‚ÌƒŠƒXƒg‚ğŠi”[‚·‚éƒŠƒXƒg
 
 	    StringBuilder builder = new StringBuilder();
 
@@ -18,13 +18,13 @@ public class ScoreSortTaker {
 	    	String string = "";
 	        string = reader.readLine();
 	        while (string != null){
-	        	//ã‚«ãƒ³ãƒåŒºåˆ‡ã‚Š
+	        	//ƒJƒ“ƒ}‹æØ‚è
 	        	String[] line = string.split(",");
-	        	//nameè¿½åŠ 
+	        	//name’Ç‰Á
 				name.add(line[0]);
-				//scoreè¿½åŠ 
+				//score’Ç‰Á
 				score.add(Integer.parseInt(line[1]));
-	        	//æ”¹è¡Œè¿½åŠ 
+	        	//‰üs’Ç‰Á
 	            builder.append(string + System.getProperty("line.separator"));
 	            string = reader.readLine();
 	        }

@@ -63,7 +63,7 @@ function end(){
 	var result = window.confirm("TIME UP! あなたの点数は"+cnt+"点です\nランキング画面に飛んでいい？");
     
 	if( result ) {
-		location.href = "http://localhost:8080/mingames/pushbuttongameservlet?cnt="+cnt;	//+"&name="+name;
+		location.href = "http://localhost:8080/minigames/pushbuttongameservlet?cnt="+cnt;	//+"&name="+name;
 	}else{
 		window.confirm("は？\nランキング画面に飛んでいいよね？");
 	}

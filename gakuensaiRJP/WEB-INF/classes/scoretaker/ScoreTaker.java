@@ -8,11 +8,11 @@ import java.util.ArrayList;
 public class ScoreTaker {
 	public static ArrayList scoreTake(String path) {
 		/*
-		ArrayList<ArrayList> data=ScoreReader.getScore(path);//ã‚¹ã‚³ã‚¢ã€åå‰ã®ãƒªã‚¹ãƒˆã‚’æ ¼ç´ã™ã‚‹ãƒªã‚¹ãƒˆ
-		ArrayList<String> name=data.get(0);//åå‰ã®ãƒªã‚¹ãƒˆã‚’æ ¼ç´ã™ã‚‹ãƒªã‚¹ãƒˆ
-		ArrayList<Integer> score=data.get(1);//ã‚¹ã‚³ã‚¢ã®ãƒªã‚¹ãƒˆã‚’æ ¼ç´ã™ã‚‹ãƒªã‚¹ãƒˆ
+		ArrayList<ArrayList> data=ScoreReader.getScore(path);//ƒXƒRƒAA–¼‘O‚ÌƒŠƒXƒg‚ğŠi”[‚·‚éƒŠƒXƒg
+		ArrayList<String> name=data.get(0);//–¼‘O‚ÌƒŠƒXƒg‚ğŠi”[‚·‚éƒŠƒXƒg
+		ArrayList<Integer> score=data.get(1);//ƒXƒRƒA‚ÌƒŠƒXƒg‚ğŠi”[‚·‚éƒŠƒXƒg
 
-		for(int i=0; score.size()-1>i; i++) {//æ˜‡é †ã«ã‚½ãƒ¼ãƒˆ
+		for(int i=0; score.size()-1>i; i++) {//¸‡‚Éƒ\[ƒg
 			for(int j=score.size()-1; j>i; j--) {
 				if(score.get(j-1)>score.get(j)) {
 					int x=score.get(j-1);
@@ -32,9 +32,9 @@ public class ScoreTaker {
 	}
 	*/
 
-		ArrayList<ArrayList> data = new ArrayList<ArrayList>();//ã‚¹ã‚³ã‚¢ã€åå‰ã®ãƒªã‚¹ãƒˆã‚’æ ¼ç´ã™ã‚‹ãƒªã‚¹ãƒˆ
-		ArrayList<Integer> score = new ArrayList<Integer>();//åå‰ã®ãƒªã‚¹ãƒˆã‚’æ ¼ç´ã™ã‚‹ãƒªã‚¹ãƒˆ
-		ArrayList<String> name = new ArrayList<String>();//ã‚¹ã‚³ã‚¢ã®ãƒªã‚¹ãƒˆã‚’æ ¼ç´ã™ã‚‹ãƒªã‚¹ãƒˆ
+		ArrayList<ArrayList> data = new ArrayList<ArrayList>();//ƒXƒRƒAA–¼‘O‚ÌƒŠƒXƒg‚ğŠi”[‚·‚éƒŠƒXƒg
+		ArrayList<Integer> score = new ArrayList<Integer>();//–¼‘O‚ÌƒŠƒXƒg‚ğŠi”[‚·‚éƒŠƒXƒg
+		ArrayList<String> name = new ArrayList<String>();//ƒXƒRƒA‚ÌƒŠƒXƒg‚ğŠi”[‚·‚éƒŠƒXƒg
 
 	    StringBuilder builder = new StringBuilder();
 
@@ -42,13 +42,13 @@ public class ScoreTaker {
 	    	String string = "";
 	        string = reader.readLine();
 	        while (string != null){
-	        	//ã‚«ãƒ³ãƒåŒºåˆ‡ã‚Š
+	        	//ƒJƒ“ƒ}‹æØ‚è
 	        	String[] line = string.split(",");
-	        	//nameè¿½åŠ 
+	        	//name’Ç‰Á
 				name.add(line[0]);
-				//scoreè¿½åŠ 
+				//score’Ç‰Á
 				score.add(Integer.parseInt(line[1]));
-	        	//æ”¹è¡Œè¿½åŠ 
+	        	//‰üs’Ç‰Á
 	            builder.append(string + System.getProperty("line.separator"));
 	            string = reader.readLine();
 	        }
@@ -56,7 +56,7 @@ public class ScoreTaker {
 	    	e.printStackTrace();
 	    }
 
-	    for(int i=0; score.size()-1>i; i++) {//æ˜‡é †ã«ã‚½ãƒ¼ãƒˆ
+	    for(int i=0; score.size()-1>i; i++) {//¸‡‚Éƒ\[ƒg
 			for(int j=score.size()-1; j>i; j--) {
 				if(score.get(j-1)>score.get(j)) {
 					int x=score.get(j-1);
