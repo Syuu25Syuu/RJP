@@ -7,10 +7,11 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServlet;
 
 import scoretaker.ScoreSortTaker;
 
-public class PushbuttongameServlet {
+public class PushbuttongameServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		//文字コード
 		request.setCharacterEncoding("Windows-31J");
@@ -29,7 +30,7 @@ public class PushbuttongameServlet {
 		//FileWriterクローズ
         filewriter.close();
         //読み込みーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-        ArrayList data=ScoreSortTaker.getScore("c:/TEST/test.txt");
+        ArrayList data=ScoreSortTaker.getScore("C:/gakuensaiRJP/txt/pushbuttonscore.txt");
 
 
 
