@@ -20,7 +20,7 @@ public class PushbuttongameServlet extends HttpServlet {
 		String cnt = request.getParameter("cnt");
 		//書き込みーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 		//テキストファイル指定
-		File file = new File("pushbuttonscore.txt");
+		File file = new File("C:/gakuensaiRJP/txt/pushbuttonscore.txt");
 		//書き込みFileWriter生成
 		FileWriter filewriter = new FileWriter(file, true);
 		//名前書き込み
@@ -48,12 +48,12 @@ public class PushbuttongameServlet extends HttpServlet {
 		ArrayList<String> sortnames=new ArrayList<String>();
 		ArrayList<Integer> sortscores=new ArrayList<Integer>();
 		
-		for(int i=0; 3>i; i++){
-			sortnames.add((String)names2.get(i));
+		for(int i=1; 3>=i; i++){
+			sortnames.add((String)names2.get(names2.size()-i));
 		}
 		
-		for(int i=0; 3>i; i++){
-			sortscores.add((int)scores2.get(i));
+		for(int i=1; 3>=i; i++){
+			sortscores.add((int)scores2.get(scores2.size()-i));
 		}
 		
 		sortnames.add(newestname);
