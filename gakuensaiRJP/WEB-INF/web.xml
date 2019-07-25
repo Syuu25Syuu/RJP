@@ -32,4 +32,15 @@
 		<servlet-name>pushbuttonranking</servlet-name>
 		<url-pattern>/pushbuttonranking</url-pattern>
 	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>numberfindinggameservlet</servlet-name>
+		<servlet-class>NumberfindinggameServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>numberfindinggameservlet</servlet-name>
+		<url-pattern>/numberfindinggameservlet</url-pattern>
+	</servlet-mapping>
 </web-app>

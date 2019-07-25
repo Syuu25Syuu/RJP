@@ -9,27 +9,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServlet;
 
-//import scoretaker.ScoreSortTaker;
-//import scoretaker.ScoreTaker;
+import scoretaker.ScoreSortTaker;
+import scoretaker.ScoreTaker;
 
-import requiredscoretaker.PushbuttonRequiredScoreTaker;
-
-public class PushbuttongameServlet extends HttpServlet {
+public class NumberfindinggameServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		//文字コード
 		request.setCharacterEncoding("Windows-31J");
 		//URLで送られてきた値を受け取る
-		String cnt = request.getParameter("cnt");
+		String time = request.getParameter("time");
 		//書き込みーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 		//テキストファイル指定
-		File file = new File("C:/gakuensaiRJP/txt/pushbuttonscore.txt");
+		File file = new File("C:/gakuensaiRJP/txt/numberfindingscore.txt");
 		//書き込みFileWriter生成
 		FileWriter filewriter = new FileWriter(file, true);
 		//名前書き込み
 		String name="そわだ";
 		filewriter.write(name+",");
+		//コロンを空文字に変換
+		time=time.replace(":","");
 		//点数書き込み
-		filewriter.write(cnt+"\n");
+		filewriter.write(time+"\n");
 		//FileWriterクローズ
         filewriter.close();
         //読み込みーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -61,10 +61,6 @@ public class PushbuttongameServlet extends HttpServlet {
 		sortnames.add(newestname);
 		sortscores.add(newestscore);
 		
-		*/
-		ArrayList data=PushbuttonRequiredScoreTaker.takeRequiredScore("C:/gakuensaiRJP/txt/pushbuttonscore.txt");
-		ArrayList sortnames=(ArrayList)data.get(0);
-		ArrayList sortscores=(ArrayList)data.get(1);
 		
 
 
@@ -78,5 +74,7 @@ public class PushbuttongameServlet extends HttpServlet {
 		RequestDispatcher dispatcher=request.getRequestDispatcher("pushbuttonranking");
 		//JSPに転送
 		dispatcher.forward(request,response);
+		
+		*/
 	}
 }
