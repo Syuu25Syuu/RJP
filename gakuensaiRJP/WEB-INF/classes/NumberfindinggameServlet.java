@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServlet;
 
-import scoretaker.ScoreSortTaker;
 import scoretaker.ScoreTaker;
+import requiredscoretaker.NumberfindingRequiredScoreTaker;
 
 public class NumberfindinggameServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
@@ -61,7 +61,11 @@ public class NumberfindinggameServlet extends HttpServlet {
 		sortnames.add(newestname);
 		sortscores.add(newestscore);
 		
+		*/
 		
+		ArrayList data=NumberfindingRequiredScoreTaker.takeRequiredScore("C:/gakuensaiRJP/txt/numberfindingscore.txt");
+		ArrayList sortnames=(ArrayList)data.get(0);
+		ArrayList sortscores=(ArrayList)data.get(1);
 
 
 
@@ -71,10 +75,9 @@ public class NumberfindinggameServlet extends HttpServlet {
 		request.setAttribute("name",sortnames);
 		request.setAttribute("score",sortscores);
 		//ëóÇÈêÊÇÃJSPéwíË
-		RequestDispatcher dispatcher=request.getRequestDispatcher("pushbuttonranking");
+		RequestDispatcher dispatcher=request.getRequestDispatcher("numberfindingranking");
 		//JSPÇ…ì]ëó
 		dispatcher.forward(request,response);
 		
-		*/
 	}
 }

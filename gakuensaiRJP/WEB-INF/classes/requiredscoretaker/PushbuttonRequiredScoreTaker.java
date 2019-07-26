@@ -43,6 +43,9 @@ public class PushbuttonRequiredScoreTaker{
 		sortnames.add(newestname);
 		sortscores.add(newestscore);
 		
+		requireddata.add(sortnames);
+		requireddata.add(sortscores);
+		
 		return requireddata;
 	}
 }

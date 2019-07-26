@@ -27,6 +27,6 @@
 	</button>
 	</form>
 		<br>
-		<a href="http://localhost:8080/minigames/index.html">–ß‚é</a>
+		<a href="index">–ß‚é</a>
 	</body>
 </html>

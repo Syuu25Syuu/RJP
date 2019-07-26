@@ -13,8 +13,8 @@ public class Test {
 		System.out.println(st.takeSortScore("C:/gakuensaiRJP/txt/pushbuttonscore.txt"));
 		
 		//êîéöíTÇµÉQÅ[ÉÄ
-		/*System.out.println(ScoreSortTaker.takeScore("C:/gakuensaiRJP/txt/numberfindingscore.txt"));
-		ArrayList all1=ScoreSortTaker.takeScore("C:/gakuensaiRJP/txt/numberfindingscore.txt");
+		System.out.println(st.takeSortScore("C:/gakuensaiRJP/txt/numberfindingscore.txt"));
+		ArrayList all1=st.takeSortScore("C:/gakuensaiRJP/txt/numberfindingscore.txt");
 		ArrayList name1=(ArrayList)all1.get(0);
 		ArrayList score1=(ArrayList)all1.get(1);
 		
@@ -34,6 +34,5 @@ public class Test {
 			ms=score.substring(4);
 			System.out.println(name1.get(i)+" "+m+":"+s+":"+ms);
 		}
-		*/
 	}
 }
