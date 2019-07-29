@@ -1,0 +1,101 @@
+﻿body{
+	background-image: url("");
+	/*background-size: cover;*/
+}
+
+#myModalLabel{
+	font-weight:bolder;
+}
+
+#start{
+	background-color:black;
+	color:white;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#timer{
+	font-size: 35px;
+	letter-spacing: 0.1em;
+	vertical-align: top;
+	margin-left: 5px;
+}
+#missCount{
+	font-size: 35px;
+	letter-spacing: 0.1em;
+	vertical-align: top;
+	margin-left: 5px;
+}
+#finishScore{
+	font-size: 35px;
+	letter-spacing: 0.1em;
+	vertical-align: top;
+	margin-left: 5px;
+}
+
+#rule{
+	font-size: 20px;
+}
+
+#board{
+	position: relative;
+	font-size:30px;
+	margin-top:50px;
+	top: 0px;
+	left: 0px;
+}
+
+#score{
+	font-size:30px;
+}
+
+#rank{
+	font-size:20px;
+}
+
+.btn-default{
+	font-size:50px;
+	text-align: center;
+	margin:5px;
+	height: 100px;
+	width: 100px;
+}
+
+#imgNum{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	opacity:0.5;
+}
+
+#btnOtherGame{
+	background-color:black;
+}
+
+#btnReplay{
+	background-color:black;
+}
+
+/* 点滅 */
+.blinking{
+	-webkit-animation:blink 0.2s ease-in-out infinite alternate;
+    -moz-animation:blink 0.2s ease-in-out infinite alternate;
+    animation:blink 0.2s ease-in-out infinite alternate;
+}
+@-webkit-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@-moz-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+.modal-footer > button{
+	width: 49%;
+}
+
