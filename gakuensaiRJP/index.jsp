@@ -11,6 +11,7 @@
 <body>
 	<a href="numberfindinggame">数字探し</a>
 	<a href="pushbuttongame">連打ゲーム</a>
+	<a href="numberfinding/indextouchnumber.html">数字探しサンプル</a>
 </body>
 
 </html>

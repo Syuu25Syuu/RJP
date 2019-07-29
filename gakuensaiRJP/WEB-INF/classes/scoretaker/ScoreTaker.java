@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+//テキストファイルからデータを取得するクラス
 public class ScoreTaker {
 	//テキストファイルからデータを取ってくるメソッド
 	public static ArrayList getScore(String path) {
@@ -37,25 +38,26 @@ public class ScoreTaker {
 	    return data;
 	}
 	
+	//ソートせずに(最新のデータを取るときに使う)データを送るメソッド
 	public ArrayList takeScore(String path){
 		return getScore(path);
 	}
-	
+	//ソートして(上位者のデータを取るときに使う)データを送るメソッド
 	public ArrayList takeSortScore(String path){
-		ArrayList data=getScore(path);
-		ArrayList name=(ArrayList)data.get(0);
-		ArrayList score=(ArrayList)data.get(1);
+		ArrayList<ArrayList> data=(ArrayList)getScore(path);//名前、スコアのデータのリスト
+		ArrayList<String> name=(ArrayList)data.get(0);//名前のデータのリスト
+		ArrayList<Integer> score=(ArrayList)data.get(1);//スコアのデータのリスト
 		
 		
-		
-		for(int i=0; score.size()-1>i; i++) {//昇順にソート
+		//昇順にソート
+		for(int i=0; score.size()-1>i; i++) {
 			for(int j=score.size()-1; j>i; j--) {
 				if((int)score.get(j-1)>(int)score.get(j)) {
 					int x=(int)score.get(j-1);
-					score.set(j-1, score.get(j));
+					score.set(j-1, (int)score.get(j));
 					score.set(j,x);
 					String y=(String)name.get(j-1);
-					name.set(j-1, name.get(j));
+					name.set(j-1, (String)name.get(j));
 					name.set(j,y);
 				}
 			}
