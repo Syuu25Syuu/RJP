@@ -21,7 +21,7 @@ public class NumberfindingRequiredScoreTaker{
 		ArrayList names=(ArrayList)all.get(0);
 		ArrayList scores=(ArrayList)all.get(1);
 		
-		for(int i=0; i<3; i++){
+		for(int i=0; i<10; i++){
 			requirednames.add((String)names.get(i));
 		}
 		
@@ -29,7 +29,7 @@ public class NumberfindingRequiredScoreTaker{
 		String s="";
 		String ms="";
 		
-		for(int i=0; i<3; i++){
+		for(int i=0; i<10; i++){
 			String score=String.valueOf((int)scores.get(i));
 			
 			while(score.length()<6){

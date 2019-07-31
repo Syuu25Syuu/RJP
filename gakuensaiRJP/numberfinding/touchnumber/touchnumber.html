@@ -35,7 +35,7 @@
       </div>
 
 
-      <div class="row">
+      <!--div class="row"-->
          <div class="col-md-2">
             <img id="imgNum" class="spin" src="" alt="" width="400px" height="400px">
          </div>
@@ -44,7 +44,7 @@
          
          	<br>
             <!--スタートボタン-->
-            <button class="btn btn-primary btn-lg myFontClass" id="start">はじめる</button>
+            <p id="start"></p>
 
             <!-- タイマー　-->
             <p><span id="timer" class="myFontClass">00:00:00</span></p>
@@ -58,23 +58,20 @@
          </div>
          <div class="col-md-2">
          </div>
-      </div>
+      <!--/div-->
 
 <dialog style="position: absolute; width: 50%; height: 500px; top: 10px;">
   <button type="button" class="close" data-dismiss="modal">
-           <span aria-hidden="true">&times;</span>
-           <span class="sr-only">閉じる</span>
   </button>
            <h4 class="modal-title text-center text-primary myFontClass" id="myModalLabel">数字探しゲームの説明</h4>
   <p class="myFontClass">名前を入力してゲームをするボタンを押す。</p>
            <p class="myFontClass">はじめるボタンを押す。</p>
-           <p class="myFontClass">１～１６まで順番通りにクリックする。</p>
+           <p class="myFontClass">１～9まで順番通りにクリックする。</p>
            <p class="myFontClass"><form id="nameform" action=""><input type="text" id="name" name="name" value="" placeholder="名前を入力してください。"></p>
            <p class=""><button id ="close" type="button" class="btn btn-primary btn-lg myFont1" data-dismiss="modai"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> ゲームをする</button></p>
 </dialog>
-<button id="show" type="button" class="btn btn-primary btn-lg myFontClass" data-dismiss="modal" style="color:white; background-color: black; border-color: black;">
- 
-説明を読む</button>
+<p id="show" type="button" data-dismiss="modal" style="color:white; background-color: white; border-color: white;">
+</p>
 
    <!-- ランキング用モーダル -->
    <div class="modal fade" id="ranking" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

@@ -25,7 +25,7 @@
   //ボード動かし用
   var bx = 0, by = 0, bdivx = 1, bdivy = 1, bvelx = 1, bvely = 3.5;
   var moveBoardTimerId;
-  var timingB = 20;
+  var timingB = 100;
   //-----------------------------------------------------------
   
     $('#rule').modal('show');
@@ -53,22 +53,6 @@
     	$("#difficulty1").prop("disabled", false);
     	$("#difficulty2").prop("disabled", false);
     	$("#difficulty3").prop("disabled", true);
-    });
-    $("#start").on("click", function() {
-        timingSet();
-        moveImg();
-        $("#start").prop("disabled", true);//ゲーム中ははじめるボタンを非活性に
-        $("#difficulty1").prop("disabled", true);
-    	$("#difficulty2").prop("disabled", true);
-    	$("#difficulty3").prop("disabled", true);
-       $('#board').hide();
-        $timeCount.text("00:00:00");
-        $board.html("");
-        currentNum = 1;
-        clearTimeout(timerId);
-        initBoard();
-        start();
-        $('#board').show();
     });
 
     $board.on("click", "#num", checkNum);
@@ -104,6 +88,35 @@
 	
 
 
+var count = 4;
+  var countdown = function(){
+    console.log(count--);
+    var id = setTimeout(countdown, 1000);
+    if(count==0){
+    	$timeCount.text("スタート");
+    }else{
+    	$timeCount.text(count);
+    }
+    if(count < 0){
+      clearTimeout(id);
+      timingSet();
+        moveImg();
+        $("#start").prop("disabled", true);//ゲーム中ははじめるボタンを非活性に
+        $("#difficulty1").prop("disabled", true);
+    	$("#difficulty2").prop("disabled", true);
+    	$("#difficulty3").prop("disabled", true);
+       $('#board').hide();
+        $timeCount.text("00:00:00");
+        $board.html("");
+        currentNum = 1;
+        clearTimeout(timerId);
+        initBoard();
+        start();
+        $('#board').show();
+    }
+  }
+  
+
 
 
     var dialog = document.querySelector('dialog');
@@ -115,6 +128,7 @@
     }, false);
     btn_close.addEventListener('click', function() {
       dialog.close();
+      countdown();
     }, false);
 
 
@@ -397,6 +411,9 @@ function moveBoard(){
 function names(){
 	//入力された名前関係
 	var name=document.getElementById('name').value;
+	if(name==""){
+		name="名無しの権兵衛";
+	}
 	console.log(name);
 	
 	return name;

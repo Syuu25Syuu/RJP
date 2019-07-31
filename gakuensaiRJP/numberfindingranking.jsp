@@ -17,12 +17,20 @@
 			<tr><td>1</td><td>${name[0]}</td><td>${score[0]}</td></tr>
 			<tr><td>2</td><td>${name[1]}</td><td>${score[1]}</td></tr>
 			<tr><td>3</td><td>${name[2]}</td><td>${score[2]}</td></tr>
+			<tr><td>4</td><td>${name[3]}</td><td>${score[3]}</td></tr>
+			<tr><td>5</td><td>${name[4]}</td><td>${score[4]}</td></tr>
+			<tr><td>6</td><td>${name[5]}</td><td>${score[5]}</td></tr>
+			<tr><td>7</td><td>${name[6]}</td><td>${score[6]}</td></tr>
+			<tr><td>8</td><td>${name[7]}</td><td>${score[7]}</td></tr>
+			<tr><td>9</td><td>${name[8]}</td><td>${score[8]}</td></tr>
+			<tr><td>10</td><td>${name[9]}</td><td>${score[9]}</td></tr>
 		</table>
 		<br>
 		<table border="1">
 			<th>ç≈êVãLò^</th>
-			<tr><td>${name[3]}</td><td>${score[3]}</td></tr>
+			<tr><td>${name[10]}</td><td>${score[10]}</td></tr>
 		</table>
 		
+		<a href="index">TOP</a>
 	</body>
 </html>

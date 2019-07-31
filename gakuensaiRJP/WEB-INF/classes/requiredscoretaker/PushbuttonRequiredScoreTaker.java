@@ -21,11 +21,11 @@ public class PushbuttonRequiredScoreTaker{
 		ArrayList names2=(ArrayList)data.get(0);
 		ArrayList scores2=(ArrayList)data.get(1);
 		
-		for(int i=1; 3>=i; i++){
+		for(int i=1; 10>=i; i++){
 			sortnames.add((String)names2.get(names2.size()-i));
 		}
 		
-		for(int i=1; 3>=i; i++){
+		for(int i=1; 10>=i; i++){
 			sortscores.add((int)scores2.get(scores2.size()-i));
 		}
 		
