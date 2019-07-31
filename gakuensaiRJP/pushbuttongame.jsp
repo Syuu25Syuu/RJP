@@ -14,7 +14,7 @@
 		<h1>連打力</h1>
 		
 		<form name="form1">
-			<input type="button" value="ボタン" name="p_btn">
+			<input type="button" value="ボタン" name="p_btn" id="button">
 		</form>
 		
 		<span id="counter"></span>

@@ -31,5 +31,6 @@
 			<tr><td>${name[10]}</td><td>${score[10]}</td></tr>
 		</table>
 		<a href="index">TOP</a>
+		<a href="pushbuttongame">‚à‚¤ˆê“x—V‚Ô</a>
 	</body>
 </html>

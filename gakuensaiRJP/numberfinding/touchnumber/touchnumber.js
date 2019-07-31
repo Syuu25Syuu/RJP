@@ -228,8 +228,18 @@ window.onload = function(){
       resetStopWatch();
 }
 
-
-
+				var count2 = 2;
+                var countdown2 = function(){
+				   console.log(count2--);
+				   var id = setTimeout(countdown2, 1000);
+				   if(count2==0){
+				    $('#timer').hide();
+				   	location.href = "http://localhost:8080/minigames/numberfindinggameservlet?time="+drawTime()+"&name="+names();
+				   }else{
+				   	$timeCount.text("ランキングページに飛びます");
+				   	
+				   }
+                }
 
 
 
@@ -250,18 +260,33 @@ window.onload = function(){
                clearTimeout(moveBoardTimerId);
                $('#start').hide();
                $('#board').hide();
-               $('#timer').hide();
+               //$('#timer').hide();
                $('#btnOtherGame').hide();
                $('#btnReplay').hide();
                $('#imgNum').hide()
                $('#show').hide();
-               location.href = "http://localhost:8080/minigames/numberfindinggameservlet?time="+drawTime()+"&name="+names();
+               countdown2();
+               
            }
            currentNum++;
       }else{
          missCount++;
+         changeColorsuper();
          soundIncorrect();
       }
+    }
+    function changeColor(){
+    	input = document.getElementById('background');
+    	input.style.backgroundColor = 'white';
+    	clearTimeout(color);
+    }
+    
+    var color;
+    var input;
+    function changeColorsuper(){
+    	input = document.getElementById('background');
+    	input.style.backgroundColor = 'red';
+    	color=setTimeout(changeColor,200);
     }
 
     function moveSpeed(num){
@@ -281,8 +306,8 @@ window.onload = function(){
 
    function soundCorrect(){
       //音声ファイルを巻き戻す(再生位置[秒]を0に設定する)
-      document.getElementById("correct").currentTime = 0;
-     $("#correct").get(0).play();
+      //document.getElementById("correct").currentTime = 0;
+     //$("#correct").get(0).play();
   }
      function soundFanfare(){
       //音声ファイルを巻き戻す(再生位置[秒]を0に設定する)
@@ -406,6 +431,22 @@ function moveBoard(){
           window.location.reload();//追加部分
        });
     };
+    //-------------------------------------------------------------------
+     i = 0;
+                        //配列を作成
+    color = new Array("red","blue","green","yellow","purple");
+    function change(){            //配列の値を背景色に
+        i++;
+        if(i >= color.length) {
+            i = 0;
+        }
+        document.bgColor = color[i];
+    }
+    function tm(){                //タイマーをセット
+        document.bgColor = color[i];
+        tm = setInterval("change()",5000);
+    }
+    
 });
 
 function names(){
@@ -415,6 +456,8 @@ function names(){
 		name="名無しの権兵衛";
 	}
 	console.log(name);
+	//&が入力されたときに変換するよう"縺昴ｏ縺"は特に理由はないです
+	name=name.replace(/&/g,"縺昴ｏ縺");
 	
 	return name;
 }

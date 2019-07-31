@@ -25,6 +25,9 @@ public class NumberfindinggameServlet extends HttpServlet {
 		//‘‚«‚İFileWriter¶¬
 		FileWriter filewriter = new FileWriter(file, true);
 		//–¼‘O‘‚«‚İ
+		name = name.replace("ãã‚ã", "&amp;");
+		name = name.replace("<", "&lt;");
+		name = name.replace(">", "&gt;");
 		filewriter.write(name+",");
 		//ƒRƒƒ“‚ğ‹ó•¶š‚É•ÏŠ·
 		time=time.replace(":","");

@@ -32,5 +32,6 @@
 		</table>
 		
 		<a href="index">TOP</a>
+		<a href="numberfinding/indextouchnumber.html">‚à‚¤ˆê“x—V‚Ô</a>
 	</body>
 </html>

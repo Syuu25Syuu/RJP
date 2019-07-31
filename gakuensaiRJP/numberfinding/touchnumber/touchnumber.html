@@ -15,37 +15,20 @@
    <link href="touchnumber.css" rel="stylesheet">
    <link href="../BootStrap\index.css" rel="stylesheet">
 </head>
-<body onselectstart="return false" ondragstart="return false">
-   <audio id="incorrect" preload="auto">
-      <source src="../sounds/se_maoudamashii_onepoint33.mp3" type="audio/mp3">
-      <source src="../sounds/se_maoudamashii_onepoint33.wav" type="audio/wav">
-   </audio>
-   <audio id="correct" preload="auto">
-      <source src="../sounds/se_maoudamashii_onepoint15.mp3" type="audio/mp3">
-      <source src="../sounds/se_maoudamashii_onepoint15.wav" type="audio/wav">
-   </audio>
-   <audio id="fanfare" preload="auto">
-      <source src="../sounds/fanfare.mp3" type="audio/mp3">
-      <source src="../sounds/fanfare.wav" type="audio/wav">
-   </audio>
-   
+<body onselectstart="return false" ondragstart="return false" >
    <center>
       <div class="page-header">
          <h1 class="myFontClass">数字探しゲーム</h1>
       </div>
 
-
       <!--div class="row"-->
-         <div class="col-md-2">
-            <img id="imgNum" class="spin" src="" alt="" width="400px" height="400px">
-         </div>
-         <div class="col-md-8">
+         <div class="col-md-2"></div>
+         <div class="col-md-8" id="background">
          
          
          	<br>
             <!--スタートボタン-->
             <p id="start"></p>
-
             <!-- タイマー　-->
             <p><span id="timer" class="myFontClass">00:00:00</span></p>
             <!-- ミスした回数　-->
@@ -95,7 +78,6 @@
        </div><!-- /.modal-content -->
      </div><!-- /.modal-dialog -->
    </div><!-- /.modal -->
-
 
 </center>
 </body>

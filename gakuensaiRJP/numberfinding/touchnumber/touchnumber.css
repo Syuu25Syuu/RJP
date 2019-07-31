@@ -3,8 +3,13 @@
 	/*background-size: cover;*/
 }
 
+#background{
+	text-align: center;
+}
+
 #myModalLabel{
-	font-weight:bolder;
+	margin-right:auto;
+	margin-left:auto;
 }
 
 #start{

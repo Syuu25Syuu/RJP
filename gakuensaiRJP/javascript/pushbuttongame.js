@@ -6,7 +6,7 @@ var interval_id;
 //タイムカウンタースタートのチェック
 var start_click = false;
 //タイムセット
-var time = 30;
+var time = 10000;
 //残り秒数
 var sec = 0;
 
@@ -15,24 +15,37 @@ var sec = 0;
 //タイムカウントスタートする関数 count_start
 function count_start(){
 	if(start_click === false){
-		interval_id = setInterval(count_down , 1000);
+		interval_id = setInterval(count_down , 10);
 		start_click = true;
 	}
 }
 
 
-
 //タイムカウントダウンする関数 count_down
 function count_down(){
-	console.log(time);
-	if(time === 0){
-		//何もしない
+	if(time === 1){
+		//document.getElementById("display").innerHTML ="残り00:00";
 	}else{
 		time--;
-		sen = Math.floor(time % 60);
-		document.getElementById("display").innerHTML ="残り"+sen;
+		
+		sen = time % 100000;
+		
+		var str = String(sen);
+		str =  str.slice(1,2);
+		
+		var str2 = String(sen);
+		str2 = str2.slice(-2);
+		if(str2.length < 2){
+			str2 = str2 + "0"
+		}
+		if(str2.length < 1){
+			str2 = str2 + "00"
+		}
+		
+		document.getElementById("display").innerHTML ="残り0"+str+":"+str2;
 	}
 }
+
 
 
 //カウントアップする関数 countUp
@@ -42,7 +55,7 @@ function countUp(){
 		//スタートのフラグをオン
 		st=true;
 		count_start();
-		setTimeout("end()",30050);
+		setTimeout("end()",10010);
 		cnt++;
 	    
 		//カウンタの値を HTML 内の counter に表示
@@ -59,7 +72,6 @@ function countUp(){
 
 
 function end(){
-	console.log(time);
 	var result = window.confirm("TIME UP! あなたの点数は"+cnt+"点です\nランキング画面に飛んでいい？");
     
 	if( result ) {
@@ -68,22 +80,22 @@ function end(){
 		window.confirm("は？\nランキング画面に飛んでいいよね？");
 	}
 	cnt=0;
-	time=30;
+	time=10000;
 	clearInterval(interval_id);
 	start_click = false;
 	st=false;
 	document.getElementById("counter").innerHTML=cnt;
-	document.getElementById("display").innerHTML ="残り30";
+	document.getElementById("display").innerHTML ="残り10:00";
 }
-
 
 
 //ページロード時に実行
 window.onload = function(){
+
     //カウンタの値を HTML 内の counter に表示
     document.getElementById("counter").innerHTML=cnt;
     
-    document.getElementById("display").innerHTML ="残り30";
+    document.getElementById("display").innerHTML ="残り10:00";
     
     //「p_btn」クリック時に関数 countUp を実行
     document.form1.p_btn.onclick=countUp;
