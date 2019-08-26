@@ -15,13 +15,14 @@
 		<h1>連打力</h1>
 		
 		<form name="form1">
-			<input type="button" value="ボタン" name="p_btn">
+			<input type="button" value="ボタン" name="p_btn" id="button">
 		</form>
 		
 		<span id="counter"></span>
 		<br>
 		<span id="display"></span>
 		<br>
+		<span id="rankingpage"></span>
 		<a href="index">戻る</a>
 		
 <dialog open style="position: absolute; width: 50%; height: 500px; top: 10px; text-align:center ">
