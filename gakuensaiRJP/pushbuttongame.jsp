@@ -11,10 +11,11 @@
 	</head>
 
 	<body>
+
 		<h1>連打力</h1>
 		
 		<form name="form1">
-			<input type="button" value="ボタン" name="p_btn" id="button">
+			<input type="button" value="ボタン" name="p_btn">
 		</form>
 		
 		<span id="counter"></span>
@@ -22,5 +23,14 @@
 		<span id="display"></span>
 		<br>
 		<a href="index">戻る</a>
+		
+<dialog open style="position: absolute; width: 50%; height: 500px; top: 10px;">
+           <h4 class="modal-title text-center text-primary myFontClass" id="myModalLabel">連打ゲームの説明</h4>
+  <p>名前を入力してゲームをするボタンを押す。</p>
+           <p>ボタンを連打する。</p>
+           <p ><form id="nameform" action=""><input type="text" id="name" name="name" value="" placeholder="名前を入力してください。"></p>
+           <p><button id ="close" type="button" class="btn btn-primary btn-lg myFont1" data-dismiss="modai"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> ゲームをする</button></p>
+</dialog>
+
 	</body>
 </html>
