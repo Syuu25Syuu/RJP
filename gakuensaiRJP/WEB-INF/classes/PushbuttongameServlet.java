@@ -26,7 +26,7 @@ public class PushbuttongameServlet extends HttpServlet {
 		//‘‚«‚İFileWriter¶¬
 		FileWriter filewriter = new FileWriter(file, true);
 		//–¼‘O‘‚«‚İ
-		String name="‚»‚í‚¾";
+		String name=request.getParameter("name");
 		filewriter.write(name+",");
 		//“_”‘‚«‚İ
 		filewriter.write(cnt+"\n");

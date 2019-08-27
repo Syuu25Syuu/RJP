@@ -69,6 +69,8 @@ function countUp(){
 	}
 }
 
+var name;
+	  
 
 
 //変更点2019/08/17------------------------------------------------------------------------------
@@ -81,8 +83,9 @@ function end(){
 		document.getElementById("button").style.display="none";
 		document.getElementById("counter").style.display="none";
 		document.getElementById("display").style.display="none";
+		document.getElementById("modoru").style.display="none";
 		if(count==0){
-			location.href = "http://localhost:8080/minigames/pushbuttongameservlet?cnt="+cnt;
+			location.href = "http://localhost:8080/minigames/pushbuttongameservlet?cnt="+cnt+"&name="+name;
 		}
 		else{
 			document.getElementById("rankingpage").innerHTML="ランキング画面に飛びます";
@@ -101,6 +104,38 @@ function end(){
 
 //ページロード時に実行
 window.onload = function(){
+		document.getElementById("button").style.display="none";
+		document.getElementById("counter").style.display="none";
+		document.getElementById("display").style.display="none";
+		document.getElementById("modoru").style.display="none";
+	//--------------------ダイアログ-------------------------
+	var dialog = document.querySelector('dialog');
+	
+	dialog.show();
+
+	var btn_close = document.getElementById("close");
+
+
+	btn_close.addEventListener('click', function() {
+	  
+	  name=document.getElementById('name').value;
+	  if(name==""){
+		name="名無しの権兵衛";
+	}
+	console.log(name);
+	//&が入力されたときに変換するよう"縺昴ｏ縺"は特に理由はないです
+	name=name.replace(/&/g,"縺昴ｏ縺");
+	  
+	  dialog.close();
+	  
+	  document.getElementById("button").style.display="block";
+	  document.getElementById("counter").style.display="block";
+	  document.getElementById("display").style.display="block";
+	  document.getElementById("modoru").style.display="block";
+	}, false);
+	//----------------------------------------------------------
+
+
 
     //カウンタの値を HTML 内の counter に表示
     document.getElementById("counter").innerHTML=cnt;
@@ -110,6 +145,5 @@ window.onload = function(){
     //「p_btn」クリック時に関数 countUp を実行
     document.form1.p_btn.onclick=countUp;
 };
-
 
 

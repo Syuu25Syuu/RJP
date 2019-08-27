@@ -1,5 +1,5 @@
 <%@ page pageEncoding="Windows-31J"
- contentType="text/html;charset=Windows-31J"
+ contentType="text/html;charset=UTF-8"
 %>
 
 <%--JSTL 1.1.2 core タグライブラリ--%>
@@ -23,9 +23,9 @@
 		<span id="display"></span>
 		<br>
 		<span id="rankingpage"></span>
-		<a href="index">戻る</a>
+		<a href="index" id="modoru">戻る</a>
 		
-<dialog open style="position: absolute; width: 50%; height: 500px; top: 10px; text-align:center ">
+<dialog  style="position: absolute; width: 50%; height: 500px; top: 10px; text-align:center " id="dialog">
            <h4 class="modal-title text-center text-primary myFontClass" id="myModalLabel">連打ゲームの説明</h4>
   <p>名前を入力してゲームをするボタンを押す。</p>
            <p>ボタンを連打する。</p>
