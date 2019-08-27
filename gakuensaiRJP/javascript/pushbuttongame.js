@@ -71,15 +71,25 @@ function countUp(){
 
 
 
+//変更点2019/08/17------------------------------------------------------------------------------
+
 function end(){
-	var result = window.confirm("TIME UP! あなたの点数は"+cnt+"点です\nランキング画面に飛んでいい？");
-    
-	if( result ) {
-		location.href = "http://localhost:8080/minigames/pushbuttongameservlet?cnt="+cnt;	//+"&name="+name;
-	}else{
-		window.confirm("は？\nランキング画面に飛んでいいよね？");
-	}
-	cnt=0;
+	var count = 2;
+	var countdown = function(){
+		console.log(count--);
+		var id = setTimeout(countdown, 1000);
+		document.getElementById("button").style.display="none";
+		document.getElementById("counter").style.display="none";
+		document.getElementById("display").style.display="none";
+		if(count==0){
+			location.href = "http://localhost:8080/minigames/pushbuttongameservlet?cnt="+cnt;
+		}
+		else{
+			document.getElementById("rankingpage").innerHTML="ランキング画面に飛びます";
+		}
+	}//countdownの終わり
+	countdown();
+
 	time=10000;
 	clearInterval(interval_id);
 	start_click = false;
@@ -87,7 +97,7 @@ function end(){
 	document.getElementById("counter").innerHTML=cnt;
 	document.getElementById("display").innerHTML ="残り10:00";
 }
-
+//------------------------------------------------------------------------------------------------------
 
 //ページロード時に実行
 window.onload = function(){
