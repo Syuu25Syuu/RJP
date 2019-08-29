@@ -1,0 +1,92 @@
+<web-app>
+
+	<servlet>
+		<servlet-name>pushbuttongameservlet</servlet-name>
+		<servlet-class>PushbuttongameServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>pushbuttongameservlet</servlet-name>
+		<url-pattern>/pushbuttongameservlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>pushbuttongame</servlet-name>
+		<jsp-file>/pushbuttongame.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>pushbuttongame</servlet-name>
+		<url-pattern>/pushbuttongame</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>pushbuttonranking</servlet-name>
+		<jsp-file>/pushbuttonranking.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>pushbuttonranking</servlet-name>
+		<url-pattern>/pushbuttonranking</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>numberfindinggameservlet</servlet-name>
+		<servlet-class>NumberfindinggameServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>numberfindinggameservlet</servlet-name>
+		<url-pattern>/numberfindinggameservlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>numberfindinggame</servlet-name>
+		<jsp-file>/numberfindinggame.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>numberfindinggame</servlet-name>
+		<url-pattern>/numberfindinggame</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>numberfindingranking</servlet-name>
+		<jsp-file>/numberfindingranking.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>numberfindingranking</servlet-name>
+		<url-pattern>/numberfindingranking</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>index</servlet-name>
+		<jsp-file>/index.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>index</servlet-name>
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+	
+	
+</web-app>

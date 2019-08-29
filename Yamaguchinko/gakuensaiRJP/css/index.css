@@ -1,0 +1,109 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color:black;
+}
+.header{
+    height: 83px;
+    border-radius: 20px 20px 0 0;
+    background-image: url("title0.jpg");
+}
+
+div.headerTitle{
+	width:400px;
+	height:83px;
+	margin-left:15px;
+	//border:1px solid red;
+	float: left;
+}
+
+header h1{
+	font-size:45px;
+	font-weight: 900;
+	margin-top:11px;
+	margin-left:18px;
+	text-decoration:none;
+	-webkit-text-stroke: 1px #000000;
+	text-stroke: 1px #000000;
+	background: linear-gradient(0deg, #D5B468, #FFFF7E);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer{
+	flex: 1;
+	background-color: #EEEEEE;
+	text-align: center;
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	background-image: url("wood-texture.jpg");
+	border-radius: 0 0 20px 20px;
+}
+
+.btn-square-pop1 {
+	width:500px;
+	height:600px;
+	padding-top:50px;
+	position:relative;
+	display:inline-block;
+	text-decoration:none;
+	color:#FFFFFF;
+	background:#FD9535;
+	border-bottom:solid 2px #D27D00;
+	border-radius:10px;
+	//box-shadow:inset 0 6px 0 rgba(255,255,255,0.2), 0 6px 6px rgba(0, 0, 0, 0.19);
+	box-shadow:8px 8px 8px 0 #000000;
+	font-weight:bold;
+	font-size:65px;
+	text-shadow: 1px 2px 5px #333333;
+	background-image: url("numberfindinggame.png");
+	transition-duration: 0.5s;
+}
+
+.btn-square-pop1:hover {
+	transform: scale(1.2,1.2);
+	cursor: pointer;
+}
+
+.btn-square-pop1:active {
+	border-bottom:solid 6px #FD9535;
+	box-shadow:0 0 6px rgba(0, 0, 0, 0.30);
+}
+
+.btn-square-pop2 {
+	width:500px;
+	height:600px;
+	padding-top:50px;
+	position:relative;
+	display:inline-block;
+	text-decoration:none;
+	color:#FFFFFF;
+	background:#FD9535;
+	border-bottom:solid 2px #D27D00;
+	border-radius:10px;
+	//box-shadow:inset 0 6px 0 rgba(255,255,255,0.2), 0 6px 6px rgba(0, 0, 0, 0.19);
+	box-shadow:8px 8px 8px 0 #000000;
+	font-weight:bold;
+	font-size:65px;
+	text-shadow: 1px 2px 5px #333333;
+	background-image: url("pushbuttongame.png");
+}
+
+.btn-square-pop2:active {
+	border-bottom:solid 6px #FD9535;
+	box-shadow:0 0 6px rgba(0, 0, 0, 0.30);
+}
+
+div.footerBotton{
+	margin-top:100px;
+	margin-right:100px;
+	margin-left:100px;
+	width:500px;
+	height:650px;
+	//border:1px solid green;
+	float: right;
+}

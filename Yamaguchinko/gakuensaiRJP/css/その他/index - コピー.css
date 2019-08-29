@@ -1,0 +1,89 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    height: 70px;
+    background-color: #888888;
+    color: #FFFFFF;
+}
+
+div.headerTitle{
+	width:300px;
+	height:68px;
+	//border:1px solid red;
+	float: left;
+}
+
+header h1{
+	font-size:35px;
+	margin-top:11px;
+	margin-left:18px;
+	text-decoration:none;
+}
+
+.footer{
+	flex: 1;
+	background-color: #EEEEEE;
+	text-align: center;
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	//background-image: url("wood-texture.jpg");
+}
+
+.btn-square-pop1 {
+	width:500px;
+	height:600px;
+	padding-top:50px;
+	position:relative;
+	display:inline-block;
+	text-decoration:none;
+	color:#FFFFFF;
+	background:#FD9535;
+	border-bottom:solid 2px #D27D00;
+	border-radius:10px;
+	box-shadow:inset 0 6px 0 rgba(255,255,255,0.2), 0 6px 6px rgba(0, 0, 0, 0.19);
+	font-weight:bold;
+	font-size:65px;
+	background-image: url("numberfindinggame.png");
+}
+
+.btn-square-pop1:active {
+	border-bottom:solid 6px #FD9535;
+	box-shadow:0 0 6px rgba(0, 0, 0, 0.30);
+}
+
+.btn-square-pop2 {
+	width:500px;
+	height:600px;
+	padding-top:50px;
+	position:relative;
+	display:inline-block;
+	text-decoration:none;
+	color:#FFFFFF;
+	background:#FD9535;
+	border-bottom:solid 2px #D27D00;
+	border-radius:10px;
+	box-shadow:inset 0 6px 0 rgba(255,255,255,0.2), 0 6px 6px rgba(0, 0, 0, 0.19);
+	font-weight:bold;
+	font-size:65px;
+	background-image: url("pushbuttongame.png");
+}
+
+.btn-square-pop2:active {
+	border-bottom:solid 6px #FD9535;
+	box-shadow:0 0 6px rgba(0, 0, 0, 0.30);
+}
+
+div.footerBotton{
+	margin-top:100px;
+	margin-right:100px;
+	margin-left:100px;
+	width:500px;
+	height:650px;
+	//border:1px solid green;
+	float: right;
+}
