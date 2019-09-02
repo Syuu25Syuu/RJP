@@ -1,0 +1,115 @@
+﻿body{
+	background-image: url("wood-texture.jpg");
+	/*background-size: cover;*/
+}
+
+#background{
+	text-align: center;
+
+}
+
+#myModalLabel{
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#start{
+	background-color:black;
+	color:white;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#timer{
+	font-size: 35px;
+	letter-spacing: 0.1em;
+	vertical-align: top;
+	margin-left: 5px;
+}
+#missCount{
+	font-size: 35px;
+	letter-spacing: 0.1em;
+	vertical-align: top;
+	margin-left: 5px;
+}
+#finishScore{
+	font-size: 35px;
+	letter-spacing: 0.1em;
+	vertical-align: top;
+	margin-left: 5px;
+}
+
+#rule{
+	font-size: 20px;
+}
+
+#outerboard{
+	position:relative;
+}
+
+#board{
+	 position: absolute;
+  top: 600px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+	padding-top:50px;
+  width: 550px;
+  height: 550px;
+}
+
+#score{
+	font-size:30px;
+}
+
+#rank{
+	font-size:20px;
+}
+
+.btn-default{
+	font-size:50px;
+	text-align: center;
+	margin:5px;
+	height: 100px;
+	width: 100px;
+}
+
+#imgNum{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	opacity:0.5;
+}
+
+#btnOtherGame{
+	background-color:black;
+}
+
+#btnReplay{
+	background-color:black;
+}
+
+/* 点滅 */
+.blinking{
+	-webkit-animation:blink 0.2s ease-in-out infinite alternate;
+    -moz-animation:blink 0.2s ease-in-out infinite alternate;
+    animation:blink 0.2s ease-in-out infinite alternate;
+}
+@-webkit-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@-moz-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+.modal-footer > button{
+	width: 49%;
+}
+
