@@ -21,6 +21,13 @@ public class ScoreTaker {
 	        while (string != null){
 	        	//カンマ区切り
 	        	String[] line = string.split(",");
+	        	//---------2019/08/29終わらなかったカンマの置き換え--------------------------
+	        	if(line[0].contains("名無しの権")==true){
+	        		System.out.println("jjjjj");
+	        		line[0].replaceAll("名無しの権" , "siosiosiosiosio");
+	        		System.out.println(line[0]);
+	        		
+	        	}
 	        	//name追加
 				name.add(line[0]);
 				//score追加
@@ -32,6 +39,7 @@ public class ScoreTaker {
 	    }catch(IOException e){
 	    	e.printStackTrace();
 	    }
+
 	    data.add(name);
 	    data.add(score);
 

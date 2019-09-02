@@ -123,8 +123,8 @@ window.onload = function(){
 		name="–¼–³‚µ‚ÌŒ •º‰q";
 	}
 	console.log(name);
-	//&‚ª“ü—Í‚³‚ê‚½‚Æ‚«‚É•ÏŠ·‚·‚é‚æ‚¤"ãã‚ã"‚Í“Á‚É——R‚Í‚È‚¢‚Å‚·
-	name=name.replace(/&/g,"ãã‚ã");
+	//&‚ª“ü—Í‚³‚ê‚½‚Æ‚«‚É•ÏŠ·‚·‚é‚æ‚¤"ã‚"‚Í“Á‚É——R‚Í‚È‚¢‚Å‚·
+	name=name.replace(/&/g,"ã‚");
 	  
 	  dialog.close();
 	  

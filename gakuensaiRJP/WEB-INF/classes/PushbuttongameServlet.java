@@ -27,6 +27,12 @@ public class PushbuttongameServlet extends HttpServlet {
 		FileWriter filewriter = new FileWriter(file, true);
 		//名前書き込み
 		String name=request.getParameter("name");
+		//サニタイジング
+		name = name.replace("昴ｏ", "&amp;");
+		name = name.replace("<", "&lt;");
+		name = name.replace(">", "&gt;");
+		//------カンマの置き換え--------
+		name = name.replace("," , "縺");
 		filewriter.write(name+",");
 		//点数書き込み
 		filewriter.write(cnt+"\n");
@@ -65,9 +71,6 @@ public class PushbuttongameServlet extends HttpServlet {
 		ArrayList data=PushbuttonRequiredScoreTaker.takeRequiredScore("C:/gakuensaiRJP/txt/pushbuttonscore.txt");
 		ArrayList sortnames=(ArrayList)data.get(0);
 		ArrayList sortscores=(ArrayList)data.get(1);
-		
-
-
 
 
 		//JSP転送ーーーーーーーーーーーーーーーー-ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー

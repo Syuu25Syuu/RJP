@@ -1,4 +1,4 @@
-<%@ page pageEncoding="Windows-31J"
+<%@ page pageEncoding="SJIS"
  contentType="text/html;charset=UTF-8"
 %>
 
@@ -7,7 +7,7 @@
 <html>
 	<head>
 	<title>òAë≈ÉQÅ[ÉÄ</title>
-	<script src="javascript/pushbuttongame.js"></script>
+	<script src="javascript/pushbuttongame.js" charset="SJIS"></script>
 	</head>
 
 	<body>

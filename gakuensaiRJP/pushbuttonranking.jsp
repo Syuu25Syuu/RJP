@@ -1,5 +1,5 @@
-<%@ page pageEncoding="Windows-31J"
- contentType="text/html;charset=Windows-31J"
+<%@ page pageEncoding="SJIS"
+ contentType="text/html;charset=SJIS"
 %>
 
 <%--JSTL 1.1.2 core タグライブラリ--%>
